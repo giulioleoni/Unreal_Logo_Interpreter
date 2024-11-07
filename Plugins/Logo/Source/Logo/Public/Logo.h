@@ -15,13 +15,15 @@ public:
 		SetStageSize(StageSize);
 
 		Colors.Add(FColor::Black);
-		Colors.Add(FColor::White);
+		//Colors.Add(FColor::White);
 		Colors.Add(FColor::Red);
 		Colors.Add(FColor::Blue);
 		Colors.Add(FColor::Green);
 		Colors.Add(FColor::Yellow);
 		Colors.Add(FColor::Cyan);
 		Colors.Add(FColor::Magenta);
+		Colors.Add(FColor::Purple);
+		Colors.Add(FColor::Orange);
 
 		Commands.Add("fd", [](FLogoVM& LogoVM, TQueue<FString>& TokensQueue) -> bool {
 			if (TokensQueue.IsEmpty())

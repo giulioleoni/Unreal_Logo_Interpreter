@@ -11,9 +11,9 @@
 
 ULogoFactory::ULogoFactory()
 {
-	bEditorImport = true;                            // vuol dire che posso trascinare il file che sto importando
-	SupportedClass = UTexture2D::StaticClass();      // vuol dire che quello che trascino creerà una texture2d
-	Formats.Add(FString("logo;Logo file format"));   // vuol dire che mi aspetto un file con estensione .logo
+	bEditorImport = true;                            // I can drag to import the file
+	SupportedClass = UTexture2D::StaticClass();      // the file I import will create a texture
+	Formats.Add(FString("logo;Logo file format"));   // I expect a file with a .logo extension
 }
 
 
@@ -28,9 +28,10 @@ UObject* ULogoFactory::FactoryCreateFile
 	FFeedbackContext* Warn,
 	bool& bOutOperationCanceled)
 {
-	TArray<FColor> Result = ULogoVMBlueprintFunctionLibrary::LogoExecuteSimpleFromFile(Filename, 16, 16);
+	FIntVector2 TextureSize = FIntVector2(512 , 512);
+	TArray<FColor> Result = ULogoVMBlueprintFunctionLibrary::LogoExecuteSimpleFromFile(Filename, TextureSize.X, TextureSize.Y);
 	FCreateTexture2DParameters Params;
-	return FImageUtils::CreateTexture2D(16, 16, Result, InParent, InName.ToString(), Flags, Params);
+	return FImageUtils::CreateTexture2D(TextureSize.X, TextureSize.Y, Result, InParent, InName.ToString(), Flags, Params);
 	
 }
 
