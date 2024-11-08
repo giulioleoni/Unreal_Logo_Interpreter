@@ -15,7 +15,6 @@ public:
 		SetStageSize(StageSize);
 
 		Colors.Add(FColor::Black);
-		//Colors.Add(FColor::White);
 		Colors.Add(FColor::Red);
 		Colors.Add(FColor::Blue);
 		Colors.Add(FColor::Green);

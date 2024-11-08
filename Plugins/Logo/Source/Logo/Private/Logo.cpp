@@ -82,4 +82,3 @@ bool FLogoModule::Exec(UWorld* InWorld, const TCHAR* Cmd, FOutputDevice& Ar)
 IMPLEMENT_MODULE(FLogoModule, Logo)
 
 
- // /Script/Engine.Blueprint'/Game/BP_CubeStage.BP_CubeStage'
